@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/river-port/',
+  publicPath: '/yach-club/',
   transpileDependencies: [
     'vuetify'
   ]
