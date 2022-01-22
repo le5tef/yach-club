@@ -1,5 +1,7 @@
 module.exports = {
-  publicPath: '/yach-club/',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/yach-club/'
+    : '/',
   transpileDependencies: [
     'vuetify'
   ]
