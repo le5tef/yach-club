@@ -1,5 +1,5 @@
 <template>
-  <div class="post">
+  <div class="post" onclick="">
     <!-- <div class="post__image"></div> -->
     <v-img class="post__image" :src="post.media[0]" />
     <div class="post__content">
@@ -7,7 +7,13 @@
         <h3 class="post__title">{{ post.title }}</h3>
         <p
           class="post__excerpt"
-          v-html="post.subtitle.slice(0, 70) + '...'"
+          v-html="
+            post.subtitle
+              ? post.subtitle
+              : post.description.length > subtitleLength
+              ? post.description.slice(0, subtitleLength) + '...'
+              : post.description
+          "
         ></p>
 
         <v-btn>
@@ -32,6 +38,17 @@ export default {
   },
   computed: {
     ...mapState(["posts"]),
+    subtitleLength() {
+      return (
+        {
+          xs: 50,
+          sm:50,
+          md: 60,
+          lg: 105,
+          xl: 135,
+        }[this.$vuetify.breakpoint.name] || 90
+      );
+    },
   },
 };
 </script>

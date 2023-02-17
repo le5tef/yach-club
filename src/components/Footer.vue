@@ -7,9 +7,6 @@
   </div> -->
   <div class="footer-basic">
     <footer>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Home</a></li>
-      </ul>
       <p class="copyright">River Port © 2022</p>
     </footer>
   </div>

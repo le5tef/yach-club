@@ -5,29 +5,66 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    password: 'Wave3366',
+    dialog1: false,
+    dialog2: false,
     posts: [
       {
         id: 1,
-        title: 'Мы открылись',
-        subtitle: 'Буквально вчера',
+        title: 'О нас',
+        subtitle: 'Знакомство с River-Port',
+        description: `Рад приветствовать Вас на страничке Ривер-порт: самого маленького и уютного яхт-клуба, в центральном бьефе Москва реки!
+
+Яхт-клуб «Ривер-порт» был создан в 2021 году ,при содействии и помощи застройщика ,  усилиями инициативной группы жильцов комплекса Ривер-парк .
+
+Уверен ,многих жителей нашего района -  объединяет желание не только жить у воды, но и иметь возможность доступного, активного отдыха на воде, что и являлось целью при создании клуба .Я искренне рад  каждому кто хочет приобщится к отдыху на воде и верю ,что большое океанское приключение начинается с первых минут проведенных на нашем маленьком и весьма уютном 
+Нагатинском затоне,который  имеет все необходимое для хорошего приключения: поселок Шлюзы-чудо инженерной мысли 40х годов,необитаемый Бобровый остров, залив Острова мечты с отличным кафе, набережная Ривер парк с великолепными ресторанами.В хорошую солнечную погоду довольно ступить на палубу катера и позволить себе сменить шум города на нежный шум волн .Закройте глаза  и вы почувствуете как вас успокаивает шум волн,ветер ,тихий рокот двигателя и легкая музыка из динамиков. Удачное расположение гавани, где  практически никогда не бывает  больших волн делает возможным организовать яхтенный отдых на воде,без обременительных авиаперелетов.
+Наш девиз : Ривер-порт – место ,где начинается твое приключение!
+
+С уважением ,
+Владимир Шевченко.
+Яхт-клуб Ривер-порт.`,
         isMain: true,
         media: [
-          require('../assets/image/test2.jpg'),
+          require('../assets/image/onas_new.png'), require('../assets/image/main.jpeg'),
         ]
       },
       {
         id: 2,
-        title: 'У нас круто!',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum turpis augue, sit amet auctor eros dapibus sit amet. Mauris dignissim augue sit amet ornare sagittis. Cras pellentesque convallis ornare. Proin faucibus euismod nibh, quis aliquam turpis. Maecenas eu odio ornare, maximus ex vitae, sollicitudin velit. Quisque id tellus varius nisl egestas pharetra. In odio felis, tincidunt in blandit eget, gravida ut justo. Cras quis porttitor nunc, nec sollicitudin tellus.',
+        title: 'История',
+        subtitle: '',
+        description: `История развития нашего района была бы невозможна без гиганта того времени Московского судоремонтного и судостроительного завода  ОАО МССЗ,который возник в далеком 1936 году.
+
+Со стапелей этого завода сошло немало кораблей в мирное время, а в военное время завод внес немалую лепту в победу над врагом.
+
+
+На Московском судостроительном заводе было построено более 1800 единиц флота, из которых 80% составляли пассажирских речные суда различных типов. Так, с 1949 и по 1954 годы на здесь было построено 283 теплохода проекта 544, получивших название «Москвич» и «Эмка» (по обозначению серии литерой «М»).
+Следующим этапом стало строительство разъездных речных пассажирских судов типа «МО» и «ОМ» — с 1952 по 1966 год построено 255 судов, «Нева» (построено 6 единиц), «Московский» (построено 50 единиц).
+Но главной продукцией завода стала серия судов типа «Москва»: с 1969 по 1996 годы было построено 323 единицы.
+Отдельно можно выделить и строительство серии скоростных пассажирских судов: на воздушной подушке типа «Луч», а также глиссирующего судна типа «Заря».
+В 2010 — 2015 годах на заводе была построена серия из 9 пассажирских прогулочных и транспортных судов проекта 23020, получивших серийные названия «Столичный» и «Астраханец», а также собственные имена.
+В 1950-е годы завод также строил разъездные суда, в 1970-х — буксиры-толкачи типа «Речной», а 2000-х — суда технического флота вспомогательного назначения.
+
+МССЗ входил в состав Московского речного пароходства. После 2014 года вся деятельность завода была перенесена на «Верфь братьев Нобель» в город Рыбинск Ярославской области, которая также входила в состав Московского пароходства. С 2015 года началась застройка территории МССЗ жилыми домами комплекса «Ривер Парк». Последним судном, построенным на заводе, стал теплоход «Штандарт», покинувший акваторию предприятия осенью 2016 года.`,
         isMain: false,
         media: [
-          require('../assets/image/1.jpg'), require('../assets/image/4.jpg')
+          require('../assets/image/history2.jpg'), require('../assets/image/history1.jpg'), require('../assets/image/history5.jpg'), require('../assets/image/history4.jpg'), require('../assets/image/history3.jpg'),
         ]
       },
       {
         id: 3,
-        title: 'Новое меню в нашем ресторане',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum turpis augue, sit amet auctor eros dapibus sit amet. Mauris dignissim augue sit amet ornare sagittis. Cras pellentesque convallis ornare. Proin faucibus euismod nibh, quis aliquam turpis. Maecenas eu odio ornare, maximus ex vitae, sollicitudin velit. Quisque id tellus varius nisl egestas pharetra. In odio felis, tincidunt in blandit eget, gravida ut justo. Cras quis porttitor nunc, nec sollicitudin tellus.',
+        title: 'Поведения на воде',
+        subtitle: '',
+        description: `Безопасность на воде и хорошая морская практика -наш главный приоритет .
+
+Настоящие правила опубликованы для безусловного выполнения и капитан вступивший в клуб несет полную ответственность за выполнение им и его гостями данных правил.
+Внимание !Глубина у причала 4 метра!
+Запрещается купание в зоне причалов.
+Запрещается выход на резиновых,гребных, сап бордах без спасательного жилета.
+Выход на причалы  только для членов клуба.
+Гости проходят на причал в сопровождении капитана.
+Запрещено распитие спиртных напитков и появление на причале в нетрезвом состоянии.
+Дети в возрасте до 16 лет – выход на причалы : 1 ребенок + 1 сопровождающий. Согласно правилам –все дети и взрослые обязаны находится в спасательных жилетах на судне.`,
         isMain: false,
         media: [
           require('../assets/image/2.jpg'), require('../assets/image/5.jpg')
@@ -35,8 +72,28 @@ export default new Vuex.Store({
       },
       {
         id: 4,
-        title: 'Поступление новых яхт',
-        subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum turpis augue, sit amet auctor eros dapibus sit amet. Mauris dignissim augue sit amet ornare sagittis. Cras pellentesque convallis ornare. Proin faucibus euismod nibh, quis aliquam turpis. Maecenas eu odio ornare, maximus ex vitae, sollicitudin velit. Quisque id tellus varius nisl egestas pharetra. In odio felis, tincidunt in blandit eget, gravida ut justo. Cras quis porttitor nunc, nec sollicitudin tellus.',
+        title: 'Услуги яхт-клуба:',
+        subtitle: '',
+        description: `-Прокат яхт и катеров с капитаном.Мы поможем организовать праздник любого масштаба.У вас день рождения,свадьба,новоселье,романтический ужин,мальчишник или просто желание позагорать и отдохнуть? Мы рады помочь!
+
+-Ужин на яхте с меню из ресторана Латтерия 1963 или Грин паб !
+
+- Стоянка и швартовка парусных и моторных судов,гидроциклов и резиновых лодок в акватории клуба.
+
+-Мелкий ремонт
+-Перевозка катеров по России (водитель обладает категорией Е)
+
+- Зимнее хранение в теплых ангарах или на  открытой территории? Мы организуем доставку вашего судна на территорию зимней стоянки клуба (Киевское шоссе,Наро-фоминский район).
+
+Правила необходимые к исполнению:
+-Глубина у причала-4 метра.
+-Территория яхт клуба находится под круглосуточным видеонаблюдением и охраной .
+
+-Гости проходят на причал в сопровождении капитана.
+
+-При маневрировании в гавани, просьба сохранять скоростные ограничения 10 км/ч и не создавать волну.
+
+-Обратите внимание ,что на наших причалах отсутствует подключение к сети 220 в, оно осуществляется в крайнем случаю,по отдельному запросу.`,
         isMain: false,
         media: [
           require('../assets/image/3.jpg')
@@ -45,8 +102,51 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    setDialog1(state, val) {
+      state.dialog1 = val
+    },
+    setDialog2(state, val) {
+      state.dialog2 = val
+    },
+    login(state, val) {
+      state.admin = val
+    }
   },
   actions: {
+    httpGetAsync(context, pass) {
+      let data = {
+        "email": 'admin@a.ru',
+        "password": pass
+      };
+
+      fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(res => {
+        return res.json();
+      })
+        .then((data) => {
+          localStorage.setItem('Password', pass);
+          localStorage.setItem('Token', data.accessToken)
+        });
+    },
+    checkAuth() {
+      var xmlHttp = new XMLHttpRequest();
+      var token = localStorage.getItem('Token');
+      var normToken = JSON.parse(atob(token.split(".")[1]));
+      var id = normToken.sub;
+      xmlHttp.open("GET", 'http://localhost:3000/600/users/' + id, false);
+      xmlHttp.setRequestHeader('Authorization', "Bearer " + localStorage.getItem('Token'));
+      xmlHttp.onload = function () {
+        localStorage.setItem('Ok', xmlHttp.status)
+        console.log(xmlHttp.status)
+      };
+      xmlHttp.send(null);
+
+
+
+    }
   },
   getters: {
     filteredPosts(state) {

@@ -17,12 +17,15 @@
               transition="fade-transition"
             ></v-carousel-item>
           </v-carousel>
-          <div class="mt-4 px-8 py-md-8 px-md-16 details rounded-xl">
+          <div class="py-4 mt-4 px-8 py-md-8 px-md-16 details rounded-xl">
             <h1>
               {{ posts[currPage - 1].title }}
             </h1>
-            <p class="my-4">{{ posts[currPage - 1].subtitle }}</p>
-            <h4 style="font-weight: 300"><i>18:03 17.01.2022</i></h4>
+            <p
+              class="my-4"
+              style="white-space: pre-wrap"
+              v-html="posts[currPage - 1].description"
+            ></p>
           </div>
         </v-col>
       </v-row>
@@ -46,11 +49,15 @@ export default {
 
 <style scoped>
 .wrapper {
-  background: linear-gradient(
-    180deg,
-    rgba(87, 129, 187, 1) 0%,
-    rgba(124, 160, 186, 1) 100%
+
+  /*background-image: url("../assets/image/logo_white.png");*/
+  background-image: url("../assets/image/logo_white.png"), linear-gradient(
+      180deg,
+      rgba(87, 129, 187, 1) 0%,
+      rgba(124, 160, 186, 1) 100%
   );
+  background-repeat: repeat;
+  background-size: 250px;
 }
 .details {
   padding: 10px;

@@ -1,46 +1,50 @@
 <template>
   <div>
-    <v-row class="no-gutters">
-      <v-col cols="12">
-        <v-parallax
+    <v-row class="no-gutters" id="parallax">
+      <v-col cols="12" onclick="">
+        <v-img
           style="position: relative"
           class="dark d-flex justify-center align-center"
           height="400"
-          :src="mainPost[0].media[0]"
+          :src="
+            mainPost[0].media.length > 1
+              ? mainPost[0].media[1]
+              : mainPost[0].media[0]
+          "
         >
-          <div class="title">
+          <div class="title mt-8">
             <div
-              :style="
-                $vuetify.breakpoint.mobile ? 'font-size:40px' : 'font-size:90px'
-              "
+
               class="text-center text"
-              :class="$vuetify.breakpoint.mobile ? 'mb-2' : 'mb-8'"
+              :class="$vuetify.breakpoint.mobile ? 'font-50' : 'font-90'"
             >
               {{ mainPost[0].title }}
             </div>
-            <div
+            <!-- <div
               :style="
                 $vuetify.breakpoint.mobile ? 'font-size:30px' : 'font-size:50px'
               "
               class="text-center text"
             >
-              {{ mainPost[0].subtitle }}
-            </div>
+              {{
+                mainPost[0].subtitle
+                  ? mainPost[0].subtitle
+                  : mainPost[0].description.length > 50
+                  ? mainPost[0].description.slice(0, 70)
+                  : mainPost[0].description
+              }}
+            </div> -->
           </div>
 
           <v-btn
-            class="text-h6 hide rounded-0"
+            class="text-h6 hide rounded-0 justify-center"
             color="rgba(255, 255, 255, 0.699)"
-            :width="$vuetify.breakpoint.mobile ? '200px' : '70%'"
+            :to="{ name: 'post', params: { id: mainPost[0].id } }"
+            :width="$vuetify.breakpoint.mobile ? '200px' : '400px'"
           >
-            <router-link
-              style="text-decoration: none; color: black"
-              :to="{ name: 'post', params: { id: mainPost[0].id } }"
-            >
-              Подробнее
-            </router-link></v-btn
-          >
-        </v-parallax>
+            Подробнее
+          </v-btn>
+        </v-img>
       </v-col>
     </v-row>
     <!-- <v-row class="no-gutters">
@@ -85,15 +89,32 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .text {
   font-weight: 200;
   font-family: "Roboto";
 }
+
+.font-50{
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.font-90{
+  font-size: 90px;
+  line-height: 90px;
+}
+
 .dark {
   transition: 300ms;
 }
-
+.v-image__image {
+  background-position: unset !important;
+  transition: 1200ms;
+}
+.v-image:hover .v-image__image {
+  background-position: center !important;
+}
 .dark .title {
   background: rgba(255, 255, 255, 0);
   padding: 36px;
@@ -102,6 +123,7 @@ export default {
 }
 .dark .title .text {
   color: white;
+  font-weight: 100;
 }
 
 .dark:hover .title {
@@ -114,13 +136,12 @@ export default {
 }
 .dark .hide {
   position: absolute;
-  display: block;
+  display: none;
   left: 50%;
   transform: translateX(-50%);
-  display: none;
 }
 .dark:hover .hide {
-  display: block;
+  display: flex;
   animation: slidein 1200ms forwards;
 }
 @media (min-width: 0px) and (max-width: 600.98px) {
@@ -136,12 +157,12 @@ export default {
 }
 @keyframes slidein {
   from {
-    margin-top: 450px;
+    margin-top: 200px;
     opacity: 0;
   }
 
   to {
-    margin-top: 300px;
+    margin-top: 50px;
     opacity: 1;
   }
 }

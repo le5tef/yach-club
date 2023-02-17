@@ -5,7 +5,7 @@
 
       <v-btn
         text
-        href="tel:79265111689"
+        @click="setDialog1(true)"
         target="_blank"
         style="color: #a80814"
         :class="$vuetify.breakpoint.mobile ? 'text-h7' : ''"
@@ -17,8 +17,7 @@
       /></router-link>
 
       <v-btn
-        href="https://www.google.com/maps/place/55%C2%B040'58.1%22N+37%C2%B041'51.9%22E/@55.6827813,37.6974526,19.25z/data=!4m5!3m4!1s0x0:0x859ecd97e4fe8489!8m2!3d55.682795!4d37.697736?hl=ru"
-        target="_blank"
+        @click="setDialog2(true)"
         text
         style="color: #181b48"
         :class="$vuetify.breakpoint.mobile ? 'text-h7' : ''"
@@ -30,6 +29,15 @@
     </v-app-bar>
   </div>
 </template>
+
+<script>
+import { mapMutations } from "vuex";
+export default {
+  methods: {
+    ...mapMutations(["setDialog1", "setDialog2"]),
+  },
+};
+</script>
 
 <style scoped>
 </style>

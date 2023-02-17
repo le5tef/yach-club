@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import NewPage from '../views/NewPage.vue'
+import Admin from '../views/Admin.vue'
 
 
 Vue.use(VueRouter)
@@ -17,6 +18,11 @@ const routes = [
     path: '/post/:id',
     name: 'post',
     component: NewPage
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Admin
   }
 
 ]
