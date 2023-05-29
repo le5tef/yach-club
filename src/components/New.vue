@@ -4,25 +4,30 @@
     <v-img class="post__image" :src="post.media[0]" />
     <div class="post__content">
       <div class="post__inside">
-        <h3 class="post__title">{{ post.title }}</h3>
-        <p
-          class="post__excerpt"
-          v-html="
+
+        <div class="d-flex flex-column justify-space-between" style="height: 100%">
+          <div>
+            <h3 class="post__title">{{ post.title }}</h3>
+            <p
+                class="post__excerpt"
+                v-html="
             post.subtitle
               ? post.subtitle
               : post.description.length > subtitleLength
               ? post.description.slice(0, subtitleLength) + '...'
               : post.description
           "
-        ></p>
+            ></p>
+          </div>
 
-        <v-btn>
+
+
           <router-link
             :to="{ name: 'post', params: { id: post.id } }"
-            class="post__button"
-            >Подробнее</router-link
-          >
-        </v-btn>
+            class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default"
+            >Подробнее</router-link>
+
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +39,7 @@ export default {
   props: {
     post: {
       type: Object,
+      required:true
     },
   },
   computed: {
@@ -43,9 +49,9 @@ export default {
         {
           xs: 50,
           sm:50,
-          md: 60,
+          md: 70,
           lg: 105,
-          xl: 135,
+          xl: 126,
         }[this.$vuetify.breakpoint.name] || 90
       );
     },

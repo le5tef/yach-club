@@ -26,7 +26,7 @@ export default {
     ...mapActions(["checkAuth"]),
   },
   mounted: function () {
-    this.checkAuth();
+    // this.checkAuth();
   },
 };
 </script>

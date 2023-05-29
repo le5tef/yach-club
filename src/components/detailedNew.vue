@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" width="100%">
+  <div class="wrapper">
     <v-container>
       <v-row>
         <v-col cols="12" md="8" offset-md="2" class="pa-sm-8">

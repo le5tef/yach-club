@@ -109,11 +109,11 @@ export default {
   transition: 300ms;
 }
 .v-image__image {
-  background-position: unset !important;
+  /*background-position: unset !important;*/
   transition: 1200ms;
 }
 .v-image:hover .v-image__image {
-  background-position: center !important;
+  /*background-position: center !important;*/
 }
 .dark .title {
   background: rgba(255, 255, 255, 0);
